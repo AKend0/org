@@ -9,7 +9,10 @@ const Formulario = (props) => {
    const [puesto, actualizarPuesto] = useState("");
    const [foto, actualizarFoto] = useState("");
    const [equipo, actualizarEquipo] = useState("");
+
+   //evitando usar muchos puntos se llama de esa manera para solo colocar "registrar colaborador" desde App.js
    const {registrarColaborador}=props;
+
    const manejarEnvio=(event)=>{
       event.preventDefault(); //evita recargar la pagina
       //console.log("manejar envio")
@@ -19,6 +22,8 @@ const Formulario = (props) => {
          foto: foto,
          equipo: equipo
       }
+      
+      //Enviara a app.js los datos del arreglo "datosAEnviar"
       registrarColaborador(datosAEnviar)
    }
    return (

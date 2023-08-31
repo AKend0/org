@@ -1,13 +1,17 @@
 import "./colaborador.css"
-const Colaborador = () =>{
+const Colaborador = (props) =>{
+    const{nombre,puesto,foto ,equipo}=props.dato;
+    //colocar color de fondo a colaborador por equipo parte 1 de Equipo.js
+    const{colorPrimario}=props;
     return(
         <div className="colaborador">
-            <div className="encabezado">
-                <img src="https://github.com/harlandlohora.png" alt="Harland"></img>
+            //colocar color de fondo a colaborador por equipo parte 2
+            <div className="encabezado" style={{backgroundColor: colorPrimario}}>
+                <img src={foto} alt={nombre}></img>
             </div>
             <div className="info">
-                <h4>Harland Lohora</h4>
-                <h5>Instructor</h5>
+                <h4>{nombre}</h4>
+                <h5>{puesto}</h5>
             </div>
         </div>
     )

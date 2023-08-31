@@ -6,18 +6,26 @@ import { useState } from 'react';
 import Equipo from './components/Equipo';
 
 function App() {
+
+  //mostrar formulario parte 1
   const [mostrarFormulario, actualizarMostrar]=useState(false);
+
+  //agregar colaborador paso1
   const [colaboradores, actualizarColaboradores] = useState([]);
 
   //Ternario --> condicion? seMuestra :  noSeMuestra
   //condicon && seMuestra
+
+  //mostrar formulario parte 2 
   const cambiarMostrar=()=>{
     actualizarMostrar(!mostrarFormulario)
   }
-  //Registrar colaborador
+
+  //Registrar colaborador paso 2 
   const registrarColaborador=(colaborador)=>{
     console.log("Nuevo colaborador",colaborador);
     //Spread operator
+    //cuando veamos "..." significa que esta copiando un valor , en este caso un arreglo "datos a evniar" de Formulario.js 
     actualizarColaboradores([...colaboradores, colaborador])
 
   }
@@ -73,7 +81,14 @@ function App() {
       }
       <MiOrg cambiarMostrar={cambiarMostrar}/>
       {
-        equipos.map((equipo)=><Equipo key={equipo.titulo} datos={equipo}/>
+        equipos.map((equipo)=><Equipo 
+        key={equipo.titulo} 
+        datos={equipo}
+
+        //mostrar los colaboradores dentro de la pagina n su respectivo equipo
+        //filtrando a los colaboradores para colocarlo con su respectivo equipo con filter
+        colaboradores={colaboradores.filter(colaborador=>colaborador.equipo === equipo.titulo)}
+        />
         )
       }
     </div>
