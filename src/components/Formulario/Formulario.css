@@ -1,7 +1,8 @@
 .Formulario{
     display: flex;
-    justify-content:center;
+    justify-content:space-evenly;
     margin: 5rem;
+    gap: 1rem;
 }
 .Formulario form{
     max-width: 80%;

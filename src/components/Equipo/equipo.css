@@ -4,6 +4,30 @@
     box-sizing: border-box;
     text-align: center;
     font-size: 2rem;
+    position: relative;
+}
+.input-color{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  & ::-webkit-color-swatch {
+    border-radius: 15px;
+    border: none;
+  }
+  & #style1::-moz-color-swatch {
+    border-radius: 15px;
+    border: none;
+  }
 }
 .equipo h3{
     font-weight: 400;

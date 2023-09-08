@@ -1,11 +1,13 @@
 import "./colaborador.css"
+import { CgCloseR } from "react-icons/cg"
 const Colaborador = (props) =>{
-    const{nombre,puesto,foto ,equipo}=props.dato;
+    const{nombre,puesto,foto,equipo,id}=props.dato;
     //colocar color de fondo a colaborador por equipo parte 1 de Equipo.js
-    const{colorPrimario}=props;
+    const{colorPrimario, eliminarColaborador}=props;
     return(
         <div className="colaborador">
-            //colocar color de fondo a colaborador por equipo parte 2
+             <CgCloseR onClick={()=>eliminarColaborador(id)} className="eliminar"/>
+            {/* //colocar color de fondo a colaborador por equipo parte 2 */}
             <div className="encabezado" style={{backgroundColor: colorPrimario}}>
                 <img src={foto} alt={nombre}></img>
             </div>

@@ -9,9 +9,11 @@ const Formulario = (props) => {
    const [puesto, actualizarPuesto] = useState("");
    const [foto, actualizarFoto] = useState("");
    const [equipo, actualizarEquipo] = useState("");
+   const [titulo, actualizarTitulo] = useState("");
+   const [color, actualizarColor] = useState("");
 
    //evitando usar muchos puntos se llama de esa manera para solo colocar "registrar colaborador" desde App.js
-   const {registrarColaborador}=props;
+   const {registrarColaborador,crearEquipo}=props;
 
    const manejarEnvio=(event)=>{
       event.preventDefault(); //evita recargar la pagina
@@ -26,6 +28,12 @@ const Formulario = (props) => {
       //Enviara a app.js los datos del arreglo "datosAEnviar"
       registrarColaborador(datosAEnviar)
    }
+
+   const manejarNuevoEquipo = (event) => {
+      event.preventDefault()
+      crearEquipo({ titulo, colorPrimario: color })
+  }
+
    return (
       <section className="Formulario">
          <form onSubmit={manejarEnvio}>
@@ -61,6 +69,28 @@ const Formulario = (props) => {
                Crear
             </Boton>
          </form>
+         <form onSubmit={manejarNuevoEquipo}>
+            <h2>Rellena el Formulario para crear el equipo.</h2>
+            <CampoTexto 
+               titulo="Titulo" 
+               placeholder="Ingresar Nombre" 
+               required 
+               valor={titulo} 
+               actualizarValor={actualizarTitulo}
+            />
+
+            <CampoTexto 
+               titulo="Color" 
+               placeholder="Ingresar color en Hexagesimal" 
+               required 
+               valor={color} 
+               actualizarValor={actualizarColor}
+            />
+              <Boton>
+               Registrar equipo
+            </Boton>
+         </form>
+
       </section>
    )
 }
