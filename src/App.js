@@ -5,12 +5,13 @@ import Header from './components/header/Header';
 import Formulario from './components/Formulario/Formulario';
 import MiOrg from './components/MiOrg';
 import Equipo from './components/Equipo';
+import Footer from './components/Footer';
 
 
 function App() {
 
   //mostrar formulario parte 1
-  const [mostrarFormulario, actualizarMostrar]=useState(true);
+  const [mostrarFormulario, actualizarMostrar]=useState(false);
 
   //agregar colaborador paso1
   const [colaboradores, actualizarColaboradores] = useState([
@@ -164,6 +165,7 @@ function App() {
         />
         )
       }
+      <Footer/>
     </div>
   ); 
 }
