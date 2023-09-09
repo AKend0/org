@@ -2,6 +2,7 @@ import "./Formulario.css"
 import Campo from "../Campo"
 import ListaOpciones from "../ListaOpciones"
 import Boton from "../Boton"
+import { v4 as uuid } from 'uuid';
 import { useState } from "react"
 const Formulario = (props) => {
 
@@ -19,6 +20,7 @@ const Formulario = (props) => {
       event.preventDefault(); //evita recargar la pagina
       //console.log("manejar envio")
       let datosAEnviar={
+         id:uuid(),
          nombre: nombre,
          puesto: puesto,
          foto: foto,
