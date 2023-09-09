@@ -1,13 +1,15 @@
 .Formulario{
     display: flex;
     justify-content:space-evenly;
-    margin: 5rem;
+    margin: 5rem 2rem;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 .Formulario form{
     max-width: 80%;
     background-color: #f7f7f7;
     border-radius: 20px;
     box-shadow: 7px 7px 15px 0px rgba(0, 0, 0, 0.25);
-    padding: 0.5rem 6.25rem;
+    padding: 0.5rem 5.25rem;
+    flex:1;
 }

@@ -10,7 +10,7 @@ import Equipo from './components/Equipo';
 function App() {
 
   //mostrar formulario parte 1
-  const [mostrarFormulario, actualizarMostrar]=useState(false);
+  const [mostrarFormulario, actualizarMostrar]=useState(true);
 
   //agregar colaborador paso1
   const [colaboradores, actualizarColaboradores] = useState([
